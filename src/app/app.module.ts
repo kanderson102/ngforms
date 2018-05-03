@@ -15,6 +15,9 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 
+import { CommonModule } from '@angular/common'
+import { FormPoster } from './services/form-poster.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +33,12 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig, { useHash: true }),
+
+    // CommonModule,
   ],
   providers: [
+    FormPoster,
     GithubService
   ],
   bootstrap: [ AppComponent ]
